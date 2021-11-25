@@ -116,4 +116,20 @@ function gameObject() {
 }
 console.log(gameObject());
 
+function numPointsScored(playerInput) {
+    const game = gameObject()
+    for (const gameKey in game) { //iterate through game keys (home, away)
+      const teamObj = game[gameKey]
+      for (const teamKey in teamObj) { // iterate through team keys
+        const playerObj = teamObj.players
+        for (const playerKey in playerObj) { //iterate through players
+           if (playerKey === playerInput) { 
+               return playerObj[playerKey].points
+           }
+        }
+      }
+    }
+}
+
+
 
